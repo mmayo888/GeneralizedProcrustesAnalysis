@@ -1,3 +1,13 @@
+/*
+ * Unupervised GPA Filter for 2D shape data
+ *
+ * by
+ * Michael Mayo, 2013
+ *
+ */
+
+
+
 package weka.filters.unsupervised.instance;
 
 import java.util.*;
