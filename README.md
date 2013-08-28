@@ -9,6 +9,6 @@ Datasets should be prepared in ARFF format such that every example has a fixed n
 
 For an example of how to prepare the datasets, see the datasets folder.
 
-Two filters are provided: an unsupervised version applies GPA to all the data, and a supervised version that applies GPA to data from each class individually.
+Two filters are provided: an unsupervised version that applies GPA to all the data, and a supervised version that applies GPA to data from each class individually, mapping each example that consists of n points onto a new example consisting of nc points where nc is the number of classes.
 
 For an example of how to run experiments at the command line, see the run.sh file. 
