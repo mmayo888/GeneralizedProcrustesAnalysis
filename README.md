@@ -13,7 +13,11 @@ You may also include non 2D-point attributes in the dataset, and they will simpl
 
 Two filters are provided: an unsupervised version that applies GPA to all the data, and a supervised version that applies GPA to data from each class individually, mapping each example that consists of N 2D points onto a new example consisting of NC 2D points where C is the number of classes.
 
-For an example of how to run experiments at the command line, see the run.sh file. Otherwise simply use the filter from the WEKA explorer or experimenter.
+This filter should be used in conjunction with the FilteredClassifier, e.g.
+
+java -cp $WEKA_HOME/weka.jar:. weka.classifiers.meta.FilteredClassifier
+     -F  "weka.filters.unsupervised.instance.GPAFilter2D -S 42 -I 5 -C false"
+     -W  weka.classifiers.trees.RandomForest -t datasets/plethodon-species.arff -- -I 100 
 
 References:
 
