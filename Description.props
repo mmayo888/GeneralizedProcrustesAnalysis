@@ -29,7 +29,7 @@ License=GPL 2.0|Mozilla
 Description=Prepropesses 2D point data by translating, scaling and rotating the points so that shape-based classification can occur.
 
 # Package URL for obtaining the package archive (required)
-PackageURL=https://github.com/mmayo888/GeneralizedProcrustesAnalysis/dist/generalizedProcrustesAnalysis.zip
+PackageURL=https://github.com/mmayo888/GeneralizedProcrustesAnalysis/blob/master/dist/generalizedProcrustesAnalysis.zip?raw=true
 
 # URL for further information
 URL=https://github.com/mmayo888/GeneralizedProcrustesAnalysis
