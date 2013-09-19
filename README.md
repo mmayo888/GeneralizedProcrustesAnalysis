@@ -7,11 +7,21 @@ If your examples are in the form of shapes defined by 2D points, and you want to
 
 Datasets should be prepared in ARFF format such that every example has a fixed number of numeric attributes named x1, y1, x2, y2, x3, y3, ...
 
-For an example of how to prepare the datasets, see the datasets folder. Two of the datasets contain plethodon data from the Geomorph R package (Adams & Otarola-Castillo, 2013).
+For an example of how to prepare the datasets, see the datasets folder. The following example datasets are included:
+
+* plethodon-species and plethodon-site: two of the datasets from the Geomorph R package (Adams & Otarola-Castillo, 2013).
+
+* triangles: a dataset of triangles with random locations, orientations and sizes; one class consists of isosceles triangles and the others are equilaterals
+
+* triangles2: another dataset of triangles with random locations and orientations, but this this time all the triangles are equilaterals and the problem is to distinguish large vs small triangles (which means that the scaling option should be turned off when filtering this dataset).
 
 You may also include non 2D-point attributes in the dataset, and they will simply be ignored by the filter.
 
-Two filters are provided: an unsupervised version that applies GPA to all the data, and a supervised version that applies GPA to data from each class individually, mapping each example that consists of N 2D points onto a new example consisting of NC 2D points where C is the number of classes.
+Two filters are provided:
+
+* an unsupervised version that applies GPA to all the data, and 
+
+* a supervised version that applies GPA to data from each class individually, mapping each example that consists of N 2D points onto a new example consisting of NC 2D points where C is the number of classes.
 
 This filter should be used in conjunction with the FilteredClassifier, e.g.
 
