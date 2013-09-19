@@ -1,4 +1,4 @@
-@relation triangles
+@relation triangles2
 @attribute x1 numeric
 @attribute y1 numeric
 @attribute x2 numeric
