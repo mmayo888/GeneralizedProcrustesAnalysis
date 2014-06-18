@@ -15,7 +15,7 @@ For an example of how to prepare the datasets, see the datasets folder. The foll
 
 * triangles2: another dataset of triangles with random locations and orientations, but this this time all the triangles are equilaterals and the problem is to distinguish large vs small triangles (which means that the scaling option should be turned off when filtering this dataset).
 
-You may also include non 2D-point attributes in the dataset, and they will simply be ignored by the filter.
+You may also include non 2D-point attributes in the dataset, and they will simply be ignored by the filter and passed on unmodified to the base classifier.
 
 Two filters are provided:
 
