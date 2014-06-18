@@ -24,9 +24,11 @@ Two filters are provided:
 * a supervised version that applies GPA to data from each class individually, i.e. if there are C classes then it maintains C unsupervised filters, one for each class, and filters instances using each of the C unsupervised filters.
 This filter should be used in conjunction with the FilteredClassifier, e.g.
 
+```
 java -cp $WEKA_HOME/weka.jar:. weka.classifiers.meta.FilteredClassifier
      -F  "weka.filters.unsupervised.instance.GPAFilter2D -S 42 -I 5 -C false"
      -W  weka.classifiers.trees.RandomForest -t datasets/plethodon-species.arff -- -I 100 
+```
 
 Example of a 10x10 cross validation experiment performed using the WEKA experimenter:
 
