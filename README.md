@@ -29,6 +29,26 @@ java -cp $WEKA_HOME/weka.jar:. weka.classifiers.meta.FilteredClassifier
      -F  "weka.filters.unsupervised.instance.GPAFilter2D -S 42 -I 5 -C false"
      -W  weka.classifiers.trees.RandomForest -t datasets/plethodon-species.arff -- -I 100 
 
+Example of a 10x10 cross validation experiment performed using the WEKA experimenter:
+
+```
+Dataset                   (1) bayes.Na | (2) meta.F (3) meta.F
+--------------------------------------------------------------
+plethodon-site           (100)   70.50 |   100.00 v    88.25 v
+plethodon-species        (100)   57.25 |    80.25 v    67.75  
+triangles                (100)   51.93 |   100.00 v    78.47 v
+triangles2               (100)   56.33 |    51.00     100.00 v
+--------------------------------------------------------------
+                               (v/ /*) |    (3/1/0)    (3/1/0)
+
+
+Key:
+(1) bayes.NaiveBayes '' 5995231201785697655
+(2) meta.FilteredClassifier '-F \"unsupervised.instance.GPAFilter2D -S 42 -I 5 -C true\" -W bayes.NaiveBayes --' -4523450618538717400
+(3) meta.FilteredClassifier '-F \"unsupervised.instance.GPAFilter2D -S 42 -I 5 -C false\" -W bayes.NaiveBayes --' -4523450618538717400
+```
+
+
 References:
 
 Adams, Dean A. and Otarola-Castillo E. 2013. Geomorph: An R package for the collection and analysis of geometric morphometric shape data.
