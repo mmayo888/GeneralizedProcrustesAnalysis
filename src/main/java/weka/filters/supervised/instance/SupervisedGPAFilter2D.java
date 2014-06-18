@@ -76,15 +76,21 @@ public class SupervisedGPAFilter2D extends GPAFilter2D  {
             }
             // Subset the data by class
             for (int classIndex=0; classIndex<numClasses; classIndex++) {
+                // Select all examples beloning to the current class
                 Instances subset = new Instances(data,0);
                 Attribute classAtt = data.classAttribute();
                 for (Instance instance: data) {
                     if (instance.value(classAtt)==classIndex)
                         subset.add(instance);
                 }
+                // Set up the filter
                 filters[ classIndex ].setSeed( rng.nextInt() );
                 filters[ classIndex ].setNumIterations( getNumIterations() );
                 filters[ classIndex ].setAllowScaling( getAllowScaling() );
+                // Process the examples for this class only
+                filters[ classIndex ].process( subset );
+                
+                
             }
             // Done! We now have one filter per class set up
         }
