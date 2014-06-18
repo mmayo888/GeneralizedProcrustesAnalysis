@@ -21,8 +21,7 @@ Two filters are provided:
 
 * an unsupervised version that applies GPA to all the data, and 
 
-* a supervised version that applies GPA to data from each class individually, i.e. it maintains a seperate mean shape for each class
-
+* a supervised version that applies GPA to data from each class individually, i.e. if there are C classes then it maintains C unsupervised filters, one for each class, and filters instances using each of the C unsupervised filters.
 This filter should be used in conjunction with the FilteredClassifier, e.g.
 
 java -cp $WEKA_HOME/weka.jar:. weka.classifiers.meta.FilteredClassifier
