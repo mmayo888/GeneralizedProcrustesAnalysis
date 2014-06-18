@@ -194,7 +194,7 @@ public class GPAFilter2D extends SimpleBatchFilter implements Randomizable {
         for (int instanceIndex=0; instanceIndex<data.numInstances(); instanceIndex++) {
             error += rse(data.instance(instanceIndex));
         }
-        return error;
+        return error/data.numInstances();
     }
     
     // Helper method to calculate the RSE error (i.e. the procrustes distance) between an example and the reference
@@ -233,7 +233,7 @@ public class GPAFilter2D extends SimpleBatchFilter implements Randomizable {
     }
     
     
-    // Helper method to scale a single example average unit length
+    // Helper method to scale a single example to average unit length
     // Assumes that the mean is already (0,0), i.e. the example has already been translated
     private void scale(Instance instance) {
         double ssd=0;
@@ -248,24 +248,7 @@ public class GPAFilter2D extends SimpleBatchFilter implements Randomizable {
         }    
     }
     
-    // Helper method to scale a single example average unit length
-    private void __scale(Instance instance) {
-        // Calculate the mean point magnitude
-        double meanMagnitude=0;
-        for (int pointIndex=1; pointIndex<=numPoints; pointIndex++) {
-            double[] pt = getPoint(instance, pointIndex);
-            meanMagnitude+= Math.sqrt(pt[0]*pt[0]+pt[1]*pt[1]);
-        }
-        // Average the magnitude
-        meanMagnitude /= numPoints;
-        // scale the points by the magnitude to the average magnitude is unit
-        for (int pointIndex=1; pointIndex<=numPoints; pointIndex++) {
-            double[] pt = getPoint(instance, pointIndex);
-            setPoint(instance, pointIndex, new double[]{ pt[0]/meanMagnitude, pt[1]/meanMagnitude });
-        }
-        // Done
-    }
-    
+   
     // Helper method to translate a single example to the origin
     private void translate(Instance instance) {
         // Sum up the points on the example
