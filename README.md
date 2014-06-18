@@ -25,9 +25,9 @@ Two filters are provided:
 This filter should be used in conjunction with the FilteredClassifier, e.g.
 
 ```
-java -cp $WEKA_HOME/weka.jar:. weka.classifiers.meta.FilteredClassifier
-     -F  "weka.filters.unsupervised.instance.GPAFilter2D -S 42 -I 5 -C false"
-     -W  weka.classifiers.trees.RandomForest -t datasets/plethodon-species.arff -- -I 100 
+java -cp $WEKA_HOME/weka.jar:./generalizedProcrustesAnalysis.jar weka.classifiers.meta.FilteredClassifier 
+     -F "weka.filters.unsupervised.instance.GPAFilter2D -S 42 -I 5 -C true" 
+     -W weka.classifiers.bayes.NaiveBayes -t ../../datasets/plethodon-species.arff 
 ```
 
 Example of a 10x10 cross validation experiment performed using the WEKA experimenter:
