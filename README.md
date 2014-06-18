@@ -21,7 +21,7 @@ Two filters are provided:
 
 * an unsupervised version that applies GPA to all the data, and 
 
-* a supervised version that applies GPA to data from each class individually, mapping each example that consists of N 2D points onto a new example consisting of NC 2D points where C is the number of classes.
+* a supervised version that applies GPA to data from each class individually, i.e. it maintains a seperate mean shape for each class
 
 This filter should be used in conjunction with the FilteredClassifier, e.g.
 
